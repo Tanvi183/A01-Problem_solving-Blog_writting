@@ -40,6 +40,12 @@ function checkType(input: StringOrNumber): string {
 
 
 
+// Problem 4
+function getProperty(obj: any, key: string) {
+    return obj[key];
+}
+
+
 // Problem 5
 interface Book {
   title: string;
@@ -58,3 +64,36 @@ function toggleReadStatus(book: Book) {
   return updatedBook;
 }
 
+
+// Problem 6
+
+class Person {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+class Student extends Person {
+    grade: string;
+
+    constructor(name: string, age: number, grade: string) {
+        super(name, age);
+
+        this.grade = grade;
+    }
+
+    getDetails() {
+        return `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`;
+    }
+}
+
+
+// Problem 7
+
+function getIntersection(arr1: number[], arr2: number[]): number[] {
+  return arr1.filter(num => arr2.includes(num));
+}
